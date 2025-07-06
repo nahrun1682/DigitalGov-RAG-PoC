@@ -1,0 +1,44 @@
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+
+# VSCode
+.vscode/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data
+data/raw/
+
+# Environment variables
+.env
+.env.*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Test & coverage
+.pytest_cache/
+.coverage
+coverage/
+htmlcov/
+test-results/
+
+# Docker
+docker-compose.override.yml
