@@ -83,18 +83,24 @@ python data_pipeline/scraper.py   # PDF/ZIP を data/raw/ へ一括 DL
 
 ## 📁 リポジトリ構成（予定）
 
-```mermaid
-flowchart LR
-    Q["ユーザー質問"] --> E["埋め込み<br/>Azure"]
-    E --> KNN["k-NN 上位20冊"]
-    Q --> KW["Full-Text<br/>Neo4j"]
-    KNN --> MERGE["マージ"]
-    KW  --> MERGE
-    MERGE --> RERANK["GPT-4o Re-rank"]
-    RERANK --> M5["上位5冊"]
-    M5 --> VC["k-NN チャンク検索"]
-    VC --> GEN["GPT-4o 回答＋引用"]
-    GEN --> UI["Streamlit&nbsp;UI"]EADME.md
+```text
+.
+├── data_pipeline/
+│   ├── scraper.py          # PDF/ZIP ダウンロード
+│   ├── preprocess.py       # チャンク化・要約・埋め込み
+│   └── loader.py           # Neo4j へロード
+├── agents/
+│   └── manual_filter.py    # Stage-1 絞り込み
+├── retriever/
+│   └── neo4j_search.py     # Stage-2 チャンク検索
+├── app/
+│   └── streamlit_app.py    # QA 用 UI
+├── eval/
+│   ├── goldset.csv         # 133 問 + 正解ラベル
+│   └── ragas_runner.py
+├── infra/
+│   └── docker-compose.yml  # Neo4j + Langfuse
+└── README.md
 ```
 
 ---
