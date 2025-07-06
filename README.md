@@ -109,7 +109,8 @@ python data_pipeline/scraper.py   # PDF/ZIP を data/raw/ へ一括 DL
 
 ```bash
 # 1. サービス起動
-cd infra && docker-compose up -d
+# Neo4j 用 compose ファイルは `infra/neo4j` にあります
+cd infra/neo4j && docker-compose up -d
 
 # 2. サンプル PDF（3冊）を取得
 python data_pipeline/scraper.py --limit 3
