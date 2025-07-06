@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "digitalgov-rag-poc"
+version = "0.1.0"
+description = "DigitalGov RAG PoC"
+authors = ["Unknown <unknown@example.com>"]
+packages = [{include = "data_pipeline"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+requests = "^2.32.3"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2.2"
+
+[build-system]
+requires = ["poetry-core>=1.7.0"]
+build-backend = "poetry.core.masonry.api"
