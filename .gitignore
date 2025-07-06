@@ -40,5 +40,9 @@ coverage/
 htmlcov/
 test-results/
 
+#data/raw/
+data_pipeline/data/raw/
+#infra
+infra/
 # Docker
 docker-compose.override.yml
